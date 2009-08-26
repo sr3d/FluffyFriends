@@ -2,7 +2,7 @@ Event.observe( window, 'load', function() {
 
   window.paddle = new Paddle('yukyuk');
   
-  window.gameScreen = new GameScreen( 'canvas', [ window.paddle, new Soot('soot1') ] );
+  window.gameScreen = new GameScreen( 'canvas', [ window.paddle, new Soot('soot1'), new Soot('soot2'), new Soot('soot3')  ] );
   window.gameScreen.paddle = window.paddle;
   window.gameconsole = new Console(window.gameScreen);
   gameconsole.start();
@@ -29,8 +29,7 @@ var Soot = Class.create( Sprite, {
   
   ,resetCoefficents: function() { 
     this.b = 100 * Math.random();
-    this.a = Math.random() / 10;
-    
+    this.a = Math.random() / 10;    
   }
   
   ,tick : function() {

@@ -3,8 +3,10 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>YukYuk</title>
 
+<script type="text/javascript" charset="utf-8">
+  if( typeof console == 'undefined') { console = { log: function(msg) { ; } } };
+</script>
 <script type="text/javascript" charset="utf-8" src='http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js'></script>
-  
 <script type="text/javascript" charset="utf-8" src='javascripts/gameconsole.js'></script>
 <script type="text/javascript" charset="utf-8" src='javascripts/brickslayer.js'></script>
 
@@ -33,7 +35,7 @@ var game;
     .open
     { background: url('images/YukYuk_big_bite.png') no-repeat top left !important; }
     
-    #soot1
+    .soot
     { position: absolute; background: url('images/soot.png') no-repeat top left; width: 19px; height: 17px; }
 
   </style>
@@ -49,13 +51,21 @@ var game;
     <div id="yukyuk">
       
     </div>
-    <div id="soot1">
+    <div id="soot1" class='soot'>
       
     </div>
+    
+    <div id="soot2" class='soot'>
+    </div>
+
+    <div id="soot3" class='soot'>
+    </div>
+
+    
   </div>
   
   <div style='margin: 0 auto; width: 700px;font-size: 24px; color: #DFDFDF; font-weight: bold; text-align: right;padding-right: 20px; '>
-    left | right | chomp
+    left | right | space
   </div>
   
 </body>
