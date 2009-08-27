@@ -4,9 +4,12 @@
   <title>YukYuk</title>
 
 <script type="text/javascript" charset="utf-8">
-  if( typeof console == 'undefined') { console = { log: function(msg) { ; } } };
+	if( typeof console == 'undefined') { console = { log: function(msg) { ; } } };
+
+DEBUG_COLLISION = true;
 </script>
 <script type="text/javascript" charset="utf-8" src='http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js'></script>
+<script type="text/javascript" charset="utf-8" src='javascripts/collision.js'></script>
 <script type="text/javascript" charset="utf-8" src='javascripts/gameconsole.js'></script>
 <script type="text/javascript" charset="utf-8" src='javascripts/brickslayer.js'></script>
 
@@ -37,7 +40,8 @@ var game;
     
     .soot
     { position: absolute; background: url('images/soot.png') no-repeat top left; width: 19px; height: 17px; }
-
+		.bb
+		{ border: 1px solid red; position: absolute;}
   </style>
 </head>
 

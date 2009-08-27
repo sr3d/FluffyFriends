@@ -8,7 +8,7 @@ Console = Class.create();
 Console.prototype = {
 
     initialize : function (startScreen, tickSpeed) {
-        this.tickSpeed = tickSpeed || 20; // milliseconds between ticks
+        this.tickSpeed = tickSpeed || 25; // milliseconds between ticks
         this.screen = startScreen;
     },
     
