@@ -53,6 +53,7 @@ Paddle.prototype = Object.extend(new Sprite(), {
 
 	,onCollision: function() {	
 		console.log( this.score++ );
+		$('score').innerHTML = this.score;
 	}
 
 });

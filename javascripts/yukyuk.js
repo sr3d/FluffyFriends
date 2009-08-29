@@ -2,7 +2,11 @@ Event.observe( window, 'load', function() {
 
   window.paddle = new Paddle('yukyuk');
   
-  window.gameScreen = new GameScreen( 'canvas', [ window.paddle, new Soot('soot1') ] );
+  window.gameScreen = new GameScreen( 'canvas', [ window.paddle
+		, new Soot('soot1') 
+		, new Soot('soot2')
+		, new Soot('soot3')
+	] );
   window.gameScreen.paddle = window.paddle;
   window.gameconsole = new Console(window.gameScreen);
   gameconsole.start();
@@ -113,7 +117,7 @@ var GameScreen = Class.create( Screen, {
     case 32:  // space
       setTimeout( function(){ 
 					this.paddle.noChomping();
-      }, 100 );
+      }, 200 );
       break; 
     }
   },

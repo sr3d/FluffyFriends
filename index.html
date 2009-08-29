@@ -6,7 +6,7 @@
 <script type="text/javascript" charset="utf-8">
 	if( typeof console == 'undefined') { console = { log: function(msg) { ; } } };
 
-DEBUG_COLLISION = true;
+DEBUG_COLLISION = !true;
 </script>
 <script type="text/javascript" charset="utf-8" src='http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js'></script>
 <script type="text/javascript" charset="utf-8" src='javascripts/collision.js'></script>
@@ -42,6 +42,8 @@ var game;
     { position: absolute; background: url('images/soot.png') no-repeat top left; width: 19px; height: 17px; }
 		.bb
 		{ border: 1px solid red; position: absolute;}
+		#score
+		{ font-size: 40px; position: absolute; right: 0px; top: 0px; }
   </style>
 </head>
 
@@ -51,7 +53,8 @@ var game;
     YukYuk
   </div>  
   
-  <div id="canvas">
+	<div id="canvas">
+		<div id='score'>0</div>
     <div id="yukyuk">
       
     </div>
@@ -69,7 +72,9 @@ var game;
   </div>
   
   <div style='margin: 0 auto; width: 700px;font-size: 24px; color: #DFDFDF; font-weight: bold; text-align: right;padding-right: 20px; '>
-    left | right | space
+		left | right | space
+		<br/>
+		<input type='checkbox' onclick='window.DEBUG_COLLISION = !window.DEBUG_COLLISION;$$(".bb").invoke("hide")'/> Debug
   </div>
   
 </body>
