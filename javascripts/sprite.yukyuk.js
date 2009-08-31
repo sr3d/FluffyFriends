@@ -8,6 +8,9 @@ YukYuk.prototype = Object.extend(new Sprite(), {
     this.speed = 10;
     this.friction = 0;
     this.velocity = 0;
+    
+    this.leftBound = -50;
+    this.rightBound =  30;
 
 
 		this.bb = new BoundingShape.Rectangle( this.id, { 
@@ -19,6 +22,7 @@ YukYuk.prototype = Object.extend(new Sprite(), {
 		this.bb.isEnabled = false;
 		
 		this.score = 0;
+		
   }
   
 	,updateBoundingBox: function() {
@@ -26,12 +30,23 @@ YukYuk.prototype = Object.extend(new Sprite(), {
 	}
 
   ,tick: function() {
-    if (this.getX() + this.velocity <= -50)
-      this.setX( -50 );
-    else if (this.getX() + this.velocity + this.getW() >= game.getW() + 20 ) 
-      this.setX(game.getW() - this.getW() + 20); 
-    else 
+    if( this.velocity == 0 ) return;
+    
+    if (this.getX() + this.velocity <= this.leftBound )
+    {
+      sl.log( 'status', 'left bound' )
+      this.setX( this.leftBound );
+    }
+    else if ( this.getX() + this.velocity + this.getW() >= this.screen.getW() + this.rightBound ) 
+    {
+      sl.log( 'status', 'right bound' );
+      this.setX( this.screen.getW() - this.getW() + this.rightBound ); 
+    }
+    else
+    {
+      sl.log( 'status', 'moving, velocity %s', this.velocity );
       this.moveBy(this.velocity, 0);
+    }
 
 		this.updateBoundingBox();
 	}

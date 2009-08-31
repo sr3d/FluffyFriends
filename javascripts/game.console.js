@@ -8,7 +8,7 @@ var Console = Class.create( {
     this.screen     = screen;
     this.counter    = 0;
     
-    this.MAX_TICK   = 100; // - 1 to inifinitely looping
+    this.MAX_TICK   = 1000; // - 1 to inifinitely looping
   }
   
   ,start: function() {
@@ -42,11 +42,11 @@ var Console = Class.create( {
   ,tick : function () {
     this.counter++;
     
-    window.sl.log('Current Game Tick', this.counter );
-    if( this.MAX_TICK != -1 && this.counter > this.MAX_TICK)
+    sl.log('Current Game Tick', this.counter );
+    if( this.MAX_TICK != -1 && this.counter > this.MAX_TICK )
     {
-      console.log( 'MAX_TICK reached - stopping...' );
       this.stop();
+      sl.log( 'Game Status', 'stopped'  );      
       return
     } 
     

@@ -18,8 +18,9 @@ var GameScreen = Class.create( Screen, {
 		$super(id);
 		
 		/* push the critter to a list for collision detections*/
-		this.critters = [];
-		this.character = character;
+		this.critters           = [];
+		this.character          = character;
+		this.character.screen   = this;
 	}
 	
 	,registerObject: function( $super, object ) { 
@@ -33,34 +34,37 @@ var GameScreen = Class.create( Screen, {
 
 	,keyDown : function (e) {
     switch (e.keyCode) {
-    case Event.KEY_LEFT:
+      case Event.KEY_LEFT:
         this.character.velocity = -this.character.speed;
+        sl.log( 'velocity', this.character.velocity );
         break;
-    case Event.KEY_RIGHT:
+      case Event.KEY_RIGHT:
         this.character.velocity = +this.character.speed;
+        sl.log( 'velocity', this.character.velocity );
         break;
-    case Event.KEY_SPACE:  // space
-      this.character.chomping();
-      break;
-    default:
-        console.log('key ' + e.keyCode + ' pressed');
+      case Event.KEY_SPACE:  // space
+        this.character.chomping();
+        break;
+      default:
+        sl.log('Key Pressed', e.keyCode);
         break;
     }
   }
 
   ,keyUp : function(e) {
     switch (e.keyCode) {
-    case Event.KEY_LEFT:
+      case Event.KEY_LEFT:
         if (this.character.velocity < 0) this.character.velocity = 0;
+        sl.log( 'velocity', this.character.velocity );
         break;
-    case Event.KEY_RIGHT:
+      case Event.KEY_RIGHT:
         if (this.character.velocity > 0) this.character.velocity = 0;
+        sl.log( 'velocity', this.character.velocity );  
         break;
-    case Event.KEY_SPACE:
-      setTimeout( function(){ 
-					this.character.noChomping();
-      }, 200 );
-      break; 
+      case Event.KEY_SPACE:
+        var self = this;
+        setTimeout( function(){ self.character.noChomping(); }, 200 );
+        break;
     }
   }
   
@@ -84,5 +88,8 @@ var GameScreen = Class.create( Screen, {
 		}
 		
   }
+  
+  ,getW: function() { return $('canvas').offsetWidth; }
+  ,getH: function() { return $('canvas').offsetHeight; }
 
 });  

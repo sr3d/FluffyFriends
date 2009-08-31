@@ -1,0 +1,22 @@
+body { font-family: arial; }
+#canvas
+{ border: 10px solid #DFDFDF; width: 700px; height: 400px; position: relative; margin: 0 auto; }
+#yukyuk
+{ background: url('../images/YukYuk_big.png') no-repeat top left; width: 404px; height: 357px; position: absolute;
+  bottom: -32px; right: -20px;
+}
+.open
+{ background: url('../images/YukYuk_big_bite.png') no-repeat top left !important; }
+
+.soot
+{ position: absolute; background: url('../images/soot.png') no-repeat top left; width: 19px; height: 17px; }
+.bb
+{ border: 1px solid red; position: absolute;}
+#score
+{ font-size: 40px; position: absolute; right: 0px; top: 0px; }
+
+#volcano 
+{ position: absolute; background: url('../images/volcano.gif') no-repeat top left; width: 130px; height: 91px; bottom: 0px; left: 20px; }
+
+#volcano.erupt
+{ background: url('../images/volcano_ani.gif'); }
