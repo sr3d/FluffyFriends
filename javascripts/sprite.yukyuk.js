@@ -1,6 +1,6 @@
 // Paddle ////////////////////////////////////////
-var Paddle = Class.create();
-Paddle.prototype = Object.extend(new Sprite(), {
+var YukYuk = Class.create();
+YukYuk.prototype = Object.extend(new Sprite(), {
 
   initialize: function(id) {
     this.id = id;
@@ -27,32 +27,28 @@ Paddle.prototype = Object.extend(new Sprite(), {
 
   ,tick: function() {
     if (this.getX() + this.velocity <= -50)
-        this.setX( -50 );
+      this.setX( -50 );
     else if (this.getX() + this.velocity + this.getW() >= game.getW() + 20 ) 
-        this.setX(game.getW() - this.getW() + 20); 
+      this.setX(game.getW() - this.getW() + 20); 
     else 
-        this.moveBy(this.velocity, 0);
+      this.moveBy(this.velocity, 0);
 
 		this.updateBoundingBox();
-	
 	}
 
 	,chomping: function() { 
 		this.isChomping = true; 
-		//console.log( 'turn on chomping' );
 		this.node.addClassName('open');
 		this.bb.isEnabled = true;
 	}
 
 	,noChomping: function() {
-			//console.log( 'turn off chomping' );
-			this.node.removeClassName( 'open' );
-			this.bb.isEnabled = false;
-			this.isChomping = false;
+		this.node.removeClassName( 'open' );
+		this.bb.isEnabled = false;
+		this.isChomping = false;
 	}
 
 	,onCollision: function() {	
-		console.log( this.score++ );
 		$('score').innerHTML = this.score;
 	}
 

@@ -14,60 +14,6 @@ Event.observe( window, 'load', function() {
 } );
 
 
-var Soot = Class.create( Sprite, { 
-  initialize: function( id ) { 
-    this.id = id;
-    this.node = $(id);
-    this.speed = 5;
-    this.friction = 0.5;
-    this.velocity = 0;
-		this.type = 'soot';
-
-    this.x = 0;
-    this.y = 100;
-
-    this.setX( this.x );
-    this.setY( this.y );
-    
-		this.bb = new BoundingShape.Rectangle( this.id, {x: this.x, y: this.y, w: 15, h: 15} );
-
-    this.resetCoefficents();
-  }
-  
-  ,resetCoefficents: function() { 
-    this.b = 100 * Math.random();
-    this.a = Math.random() / 10;
-  }
-  ,updateBoundingBox: function() { 
-		this.bb.setPos( this.x, this.y );
-	}	
-
-  ,tick : function() {
-
-    this.x += 2;
-		this.setX( this.x );
-    
-    this.y = this.a * (this.x * this.x ) + this.b; //Math.sqrt( 4 * a * this.x ) + b;
-    
-    if( this.y > 500 - this.b )
-    {
-			this.reset();
-		}
-    this.setY( this.y );
-
-		this.updateBoundingBox();
-  }
- 
-	,reset: function() { 
-		this.x = 0;
-		this.resetCoefficents();
-	}
-
-	,onCollision: function() {
-		this.reset();
-	}
-} );
-
 
 
  

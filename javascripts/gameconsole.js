@@ -1,9 +1,3 @@
-// game console  ( from javascriptgamer.com )
-//
-// requires: prototype.js (tested with v. 1.4.0)
-
-// Console ///////////////////////////////////////
-
 Console = Class.create();
 Console.prototype = {
 
@@ -74,47 +68,4 @@ Screen.prototype = {
   ,registerObject: function( obj ) { this.objects.push( obj ); }
 
 }
-
-
-// Sprite ////////////////////////////////////////
-
-var Sprite = Class.create();
-Sprite.prototype = {
-    initialize : function(id) {
-        this.id = id;
-        this.node = $(id);
-    },
-    
-    getX : function() {
-        return this.node.offsetLeft;
-    },
-    
-    setX : function(x) {
-        this.node.setStyle({'left' : x + 'px'});
-    },
-
-
-    getY : function () {
-        return this.node.offsetTop;
-    },
-    
-    setY : function(y) {
-        this.node.setStyle({'top' : y + 'px'});
-    },    
-    
-
-    moveBy: function(dx, dy) {
-        this.setX(this.getX()+dx);
-        this.setY(this.getY()+dy);
-    },
-
-    getW : function() {
-        return this.node.offsetWidth;
-    },
-    
-    getH : function() {
-        return this.node.offsetHeight;
-    },
-};
-
 
