@@ -3,14 +3,14 @@ var YukYuk = Class.create();
 YukYuk.prototype = Object.extend(new Sprite(), {
 
   initialize: function(id) {
-    this.id = id;
-    this.node = $(id);
-    this.speed = 10;
-    this.friction = 0;
-    this.velocity = 0;
+    this.id         = id;
+    this.node       = $(id);
+    this.speed      = 10;
+    this.friction   = 0;
+    this.velocity   = 0;
     
-    this.leftBound = -50;
-    this.rightBound =  30;
+    this.leftBound  = 80;
+    this.rightBound = 30;
 
 
 		this.bb = new BoundingShape.Rectangle( this.id, { 
@@ -30,7 +30,11 @@ YukYuk.prototype = Object.extend(new Sprite(), {
 	}
 
   ,tick: function() {
-    if( this.velocity == 0 ) return;
+    if( this.velocity == 0 ) 
+    { 
+      sl.log( 'status', '' )
+      return;
+    }
     
     if (this.getX() + this.velocity <= this.leftBound )
     {
@@ -44,7 +48,7 @@ YukYuk.prototype = Object.extend(new Sprite(), {
     }
     else
     {
-      sl.log( 'status', 'moving, velocity %s', this.velocity );
+      sl.log( 'status', 'moving, velocity ' + this.velocity );
       this.moveBy(this.velocity, 0);
     }
 

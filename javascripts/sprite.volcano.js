@@ -9,7 +9,6 @@ var Volcano = Class.create( Sprite, {
     
     this.id       = 'volcano';
     this.node     = $(this.id);
-    console.log( this.node );
     this.type     = 'volcano'
     
     this.reset();

@@ -21,6 +21,8 @@ var GameScreen = Class.create( Screen, {
 		this.critters           = [];
 		this.character          = character;
 		this.character.screen   = this;
+		
+		this.registerObject( character );
 	}
 	
 	,registerObject: function( $super, object ) { 
