@@ -1,4 +1,6 @@
-var Util = {};
+var Util = {counter: 0
+  ,nextCounter: function() { return this.counter++; }
+};
 Util.StaticLogger = { 
   collection: []
   ,count: []

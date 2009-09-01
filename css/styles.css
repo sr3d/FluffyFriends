@@ -16,7 +16,10 @@ body { font-family: arial; }
 { font-size: 40px; position: absolute; right: 0px; top: 0px; }
 
 #volcano 
-{ position: absolute; background: url('../images/volcano.gif') no-repeat top left; width: 130px; height: 91px; bottom: 0px; left: 20px; }
+{ position: absolute; background: url('../images/volcano_static.gif') no-repeat top left; width: 130px; height: 91px; bottom: 0px; left: 20px; }
 
-#volcano.erupt
-{ background: url('../images/volcano_ani.gif'); }
+  #volcano.erupt
+  { background: url('../images/volcano_faster.gif'); }
+
+.critter
+{ position: absolute; background: transparent url('../images/ani_critter_2.gif'); no-repeat top left; width: 53px; height: 42px; }

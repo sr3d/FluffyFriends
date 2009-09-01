@@ -8,7 +8,7 @@ var Screen = Class.create( {
   ,keyUp : function(e) {}
   ,keyPress : function(e) { }
   ,tick : function () { }
-  ,registerObject: function( obj ) { this.objects.push( obj ); }
+  ,registerObject: function( obj ) { obj.screen = this; this.objects.push( obj ); }
 } );
 
 
@@ -65,7 +65,7 @@ var GameScreen = Class.create( Screen, {
         break;
       case Event.KEY_SPACE:
         var self = this;
-        setTimeout( function(){ self.character.noChomping(); }, 200 );
+        setTimeout( function(){ self.character.noChomping(); }, 100 );
         break;
     }
   }
