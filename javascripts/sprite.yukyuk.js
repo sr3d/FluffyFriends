@@ -16,17 +16,18 @@ YukYuk.prototype = Object.extend(new Sprite(), {
 		this.bb = new BoundingShape.Rectangle( this.id, { 
 			x: this.x
 			,y: this.y
-			,w: 140 
-			,h: 100	
+			,w: 120 
+			,h: 50	
 		} );
 		this.bb.isEnabled = false;
+    this.updateBoundingBox();
 		
 		this.score = 0;
 		
   }
   
 	,updateBoundingBox: function() {
-		this.bb.setPos( this.getX() + 100, this.getY() + 200 );	
+		this.bb.setPos( this.getX() + 90, this.getY() + 220 );	
 	}
 
   ,tick: function() {

@@ -1,10 +1,17 @@
 var Critter = Class.create( Sprite, { 
-  initialize: function( $super, id, options ) { 
+  initialize: function( $super, options ) { 
     options = Object.extend( { 
       speed:      5
       ,friction:  0.5
       ,width:     50
       ,height:    50
+      
+      ,bbOffsetX: 5
+      ,bbOffsetY: 5
+      ,bbW:       20
+      ,bbH:       20
+      
+      ,critterCssClass:  ''
     }, options || {} );
     
     this.id       = 'critter_' + Util.nextCounter();
@@ -14,29 +21,38 @@ var Critter = Class.create( Sprite, {
     this.friction = options.friction;
     this.velocity = 0;
     
-    this.x        = 0;
-    this.y        = 100;
+    this.bbW      = options.bbW;
+    this.bbH      = options.bbH;
+    this.bbOffsetX = options.bbOffsetX;
+    this.bbOffsetY = options.bbOffsetY;
     
-    this.width    = options.width;
-    this.height   = options.height;
-
+    this.critterCssClass = options.critterCssClass;
     
-		this.bb = new BoundingShape.Rectangle( this.id, {x: this.x, y: this.y, w: 15, h: 15} );
+		this.initBoundingBox();
+    this.updateBoundingBox();
     
     this.render();
 
-    
     this.resetCoefficents();
   }
+  
+  ,initBoundingBox: function() { 
+    this.bb = new BoundingShape.Rectangle( this.id, {x: 0, y: 0, w: this.bbW, h: this.bbH } );
+  }
+  
+  ,updateBoundingBox: function() { 
+		this.bb.setPos( this.x + this.bbOffsetX, this.y + this.bbOffsetY );
+	}
   
   ,render: function() { 
     $('canvas').insert( { bottom: this.html() } );
     this.node = $(this.id);
+    this.node.hide();
   }
   
   ,html: function() { 
     var html = [ "<div id='" + this.id + "'" ];
-    html.push( 'class="critter"' );
+    html.push( 'class="critter ' + this.critterCssClass + ' "' );
     html.push( '></div>' );
     return html.join( ' ' );
   }
@@ -59,27 +75,20 @@ var Critter = Class.create( Sprite, {
     this.speed  = d / ( ticks * Math.cos( this.angle ) ); // px/tick
     this.a      = this.speed * 0.5 / ticks;
     
-    sl.log( this.id + ' angle', this.angle );
-    sl.log( this.id + ' speed', this.speed );
-    sl.log( this.id + ' acceleration', this.a );
+    //sl.log( this.id + ' angle', this.angle );
+    //sl.log( this.id + ' speed', this.speed );
+    //sl.log( this.id + ' acceleration', this.a );
   }
   
 
-  
-  ,updateBoundingBox: function() { 
-		this.bb.setPos( this.x, this.y );
-	}	
 	
   ,tick : function() {
-    //console.log( 'critter ticking %s', this.currentTick );
-    this.currentTick++; // 2s
+    if( !this.node.visible() ) this.node.show();
+    this.currentTick++;
 
     this.x = this.speed * Math.cos( this.angle ) * this.currentTick + 50;
     this.y = this.b - this.speed * Math.sin( this.angle ) * this.currentTick + this.a * this.currentTick * this.currentTick;
 
-    sl.log( this.id + ' x', this.x );
-    sl.log( this.id + ' y', this.y );
-    
     this.setX( this.x );
     this.setY( this.y );
 		this.updateBoundingBox();
@@ -96,6 +105,52 @@ var Critter = Class.create( Sprite, {
 
 	,onCollision: function() {
 		this.reset();
-		console.log( this.id + ' collides' );
 	}
 } );
+
+
+var HamCritter = Class.create( Critter, {
+  initialize: function( $super, options ) { 
+    options = Object.extend( { 
+      speed:      4
+      ,bbOffsetX: 7
+      ,bbOffsetY: 7
+      ,bbW:       20
+      ,bbH:       20
+      ,critterCssClass: 'ham'
+    }, options || {} );
+
+    $super( options );
+  }  
+} );
+
+var ChainsawCritter = Class.create( Critter, {
+  initialize: function( $super, options ) { 
+    options = Object.extend( { 
+      speed:      6
+      ,bbOffsetX: 7
+      ,bbOffsetY: 7
+      ,bbW:       20
+      ,bbH:       20
+      ,critterCssClass: 'chainsaw'
+    }, options || {} );
+
+    $super( options );
+  }  
+} );
+
+var IcecreamCritter = Class.create( Critter, {
+  initialize: function( $super, options ) { 
+    options = Object.extend( { 
+      speed:      6
+      ,bbOffsetX: 7
+      ,bbOffsetY: 7
+      ,bbW:       20
+      ,bbH:       20
+      ,critterCssClass: 'icecream'
+    }, options || {} );
+
+    $super( options );
+  }  
+} );
+

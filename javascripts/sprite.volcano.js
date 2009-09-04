@@ -14,7 +14,9 @@ var Volcano = Class.create( Sprite, {
     
     this.reset();
     
-    this.maxCritters = 3;
+    this.critterTypes = [ Critter, HamCritter, ChainsawCritter,  IcecreamCritter ];
+    
+    this.maxCritters = 6;
   }
   
   ,tick : function() {
@@ -46,8 +48,13 @@ var Volcano = Class.create( Sprite, {
     /* add a new criter here */
     //console.log( this.screen );
     if( this.maxCritters-- > 0 )
-      this.screen.registerObject( new Critter() );
-    setTimeout( function() { self.reset(); }, Math.random() * 1000 );
+    {
+      //var critter = this.critterTypes[ Math.round( Math.random() * this.critterTypes.length ) ];
+      var critter = this.critterTypes[ this.maxCritters % this.critterTypes.length ];
+      this.screen.registerObject( new critter() );
+      //this.screen.registerObject( new HamCritter() );
+    }
+    setTimeout( function() { self.reset(); }, Math.random() * 1500 );
   }
   
 } );
