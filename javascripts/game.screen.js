@@ -88,7 +88,6 @@ var GameScreen = Class.create( Screen, {
 				}
 			}
 		}
-		
   }
   
   ,getW: function() { return $('canvas').offsetWidth; }

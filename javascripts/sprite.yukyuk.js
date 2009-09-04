@@ -38,17 +38,17 @@ YukYuk.prototype = Object.extend(new Sprite(), {
     
     if (this.getX() + this.velocity <= this.leftBound )
     {
-      sl.log( 'status', 'left bound' )
+      //sl.log( 'status', 'left bound' )
       this.setX( this.leftBound );
     }
     else if ( this.getX() + this.velocity + this.getW() >= this.screen.getW() + this.rightBound ) 
     {
-      sl.log( 'status', 'right bound' );
+      //sl.log( 'status', 'right bound' );
       this.setX( this.screen.getW() - this.getW() + this.rightBound ); 
     }
     else
     {
-      sl.log( 'status', 'moving, velocity ' + this.velocity );
+      //sl.log( 'status', 'moving, velocity ' + this.velocity );
       this.moveBy(this.velocity, 0);
     }
 
@@ -68,6 +68,7 @@ YukYuk.prototype = Object.extend(new Sprite(), {
 	}
 
 	,onCollision: function() {	
+	  this.score++;
 		$('score').innerHTML = this.score;
 	}
 

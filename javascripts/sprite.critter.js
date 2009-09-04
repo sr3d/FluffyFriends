@@ -52,9 +52,9 @@ var Critter = Class.create( Sprite, {
     this.currentTick    = 0;        // the time
 
     /* find the speed and acceleration*/
-    var d       = 150 + Math.random() * 170;      // distance: min 150 px, max: 300
-    var t       = 1500 + Math.random() * 1000;                           // time to arrive at destination
-    var ticks   = t / 33;  // number of ticks to reach the target, at 33 ticks per second
+    var d       = 100 + Math.random() * 170;          // distance: min 150 px, max: 300
+    var t       = 1500 + Math.random() * 1000;        // time to arrive at destination
+    var ticks   = t / 33;                             // number of ticks to reach the target, at 33 ticks per second
     
     this.speed  = d / ( ticks * Math.cos( this.angle ) ); // px/tick
     this.a      = this.speed * 0.5 / ticks;
@@ -96,5 +96,6 @@ var Critter = Class.create( Sprite, {
 
 	,onCollision: function() {
 		this.reset();
+		console.log( this.id + ' collides' );
 	}
 } );
