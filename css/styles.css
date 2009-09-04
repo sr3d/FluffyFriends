@@ -22,4 +22,4 @@ body { font-family: arial; }
   { background: url('../images/volcano_faster.gif'); }
 
 .critter
-{ position: absolute; background: transparent url('../images/ani_critter_2.gif'); no-repeat top left; width: 53px; height: 42px; }
+{ position: absolute; background: transparent url('../images/ani_critter_2.gif'); no-repeat top left; width: 29px; height: 29px; }

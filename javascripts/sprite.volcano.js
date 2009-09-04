@@ -14,7 +14,7 @@ var Volcano = Class.create( Sprite, {
     
     this.reset();
     
-    this.maxCritters = 1;
+    this.maxCritters = 3;
   }
   
   ,tick : function() {

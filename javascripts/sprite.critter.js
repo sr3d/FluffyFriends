@@ -24,8 +24,7 @@ var Critter = Class.create( Sprite, {
 		this.bb = new BoundingShape.Rectangle( this.id, {x: this.x, y: this.y, w: 15, h: 15} );
     
     this.render();
-    
-    this.g    = 9.8; // m/s^2
+
     
     this.resetCoefficents();
   }
@@ -43,16 +42,22 @@ var Critter = Class.create( Sprite, {
   }
 
   ,resetCoefficents: function() {
-    this.angle          = 1; //( Math.random() * 90 )  * Math.PI / 180;
-    this.currentTick    = 0;  // the time
-    this.b              = 300;
-    /* find the speed */
-    var d = 300;  // distance
-    var t = 2000; //ms
-    var ticks = t / 33;  // number of ticks to reach the target
+    /* reset the coeffecients and the time */
+    //this.angle          = 1; //( Math.random() * 90 )  * Math.PI / 180;
+    //this.b              = 300;
+    //this.currentTick    = 0;  // the time
+
+    this.angle          = 0.8 + Math.random() * 0.4;
+    this.b              = 300;      // offset for y-axis, where the critter appears
+    this.currentTick    = 0;        // the time
+
+    /* find the speed and acceleration*/
+    var d       = 150 + Math.random() * 170;      // distance: min 150 px, max: 300
+    var t       = 1500 + Math.random() * 1000;                           // time to arrive at destination
+    var ticks   = t / 33;  // number of ticks to reach the target, at 33 ticks per second
     
-    this.speed = d / ( ticks * Math.cos( this.angle ) ); // px/tick
-    this.a     = this.speed * 0.5 / ticks;
+    this.speed  = d / ( ticks * Math.cos( this.angle ) ); // px/tick
+    this.a      = this.speed * 0.5 / ticks;
     
     sl.log( this.id + ' angle', this.angle );
     sl.log( this.id + ' speed', this.speed );
@@ -69,7 +74,7 @@ var Critter = Class.create( Sprite, {
     //console.log( 'critter ticking %s', this.currentTick );
     this.currentTick++; // 2s
 
-    this.x = this.speed * Math.cos( this.angle ) * this.currentTick ;
+    this.x = this.speed * Math.cos( this.angle ) * this.currentTick + 50;
     this.y = this.b - this.speed * Math.sin( this.angle ) * this.currentTick + this.a * this.currentTick * this.currentTick;
 
     sl.log( this.id + ' x', this.x );
@@ -79,7 +84,7 @@ var Critter = Class.create( Sprite, {
     this.setY( this.y );
 		this.updateBoundingBox();
 		
-		if( this.y > this.b )
+		if( this.y > this.b + 65 )
 		  this.resetCoefficents();
 
   }
