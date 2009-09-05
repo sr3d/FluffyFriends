@@ -22,7 +22,8 @@ var Cloud = Class.create( Sprite, {
         self.node.style.left = Math.round( -self.node.offsetWidth ) + 'px';
         //return;
       }
-      self.node.style.left = ( self.node.offsetLeft + self.speed ) + 'px';
+      
+      self.node.style.left = ( parseInt( self.node.style.left ) + self.speed ) + 'px';
       //console.log( self.node.style.left );
     }, options.tickSpeed );
   }

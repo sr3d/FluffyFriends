@@ -61,16 +61,17 @@ body { font-family: arial; text-align: center; }
 
 .cloud
 { background: url('../images/cloud.png') no-repeat top left; width: 58px; height: 20px; position: absolute; }
+
   #cloud1
-  { top: 25px; left: 40px; }
+  { top: 25px;}
   #cloud2
-  { top: 74px; left: 680px }
+  { top: 74px;  }
   #cloud3
-  { top: 110px; left: 5230px}
+  { top: 110px; }
   #cloud4
-  { top: 130px; left:  300px;}
+  { top: 130px; }
   #cloud5
-  { top: 145px; left:  500px;} 
+  { top: 145px; } 
 
 
 .critter
