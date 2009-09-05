@@ -57,7 +57,10 @@ var game;
   	  <div id="clouds">
   	    <div id="cloud1" class='cloud'></div>
   	    <div id="cloud2" class='cloud'></div>
-  	    <div id="tagline"></div>
+  	    <div id="tagline" class='tagline'></div>
+  	    <div id="tagline_buy" class='tagline' style='display: none;'>
+  	      <div><a href="http://www.ohnodoom.bigcartel.com/product/ohno-dooms-fluffyyukyuk-chompin-plush-toy" target='_blank'><span>buy yukyuk</span></a></div>
+  	    </div>
   	    <div id="cloud3" class='cloud'></div>
   	    <div id="cloud4" class='cloud'></div>
   	    <div id="cloud5" class='cloud'></div>

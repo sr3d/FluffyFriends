@@ -21,9 +21,10 @@ YukYuk.prototype = Object.extend(new Sprite(), {
 		} );
 		this.bb.isEnabled = false;
     this.updateBoundingBox();
-		
+
+    this.winningScore = 25;		
 		this.score = 0;
-		
+
   }
   
 	,updateBoundingBox: function() {
@@ -71,6 +72,13 @@ YukYuk.prototype = Object.extend(new Sprite(), {
 	,onCollision: function() {	
 	  this.score++;
 		$('score').innerHTML = this.score;
+		
+		if( this.score >= this.winningScore )
+		{
+		  $('tagline').hide();
+		  $('tagline_buy').show();
+		}
+		
 	}
 
 });

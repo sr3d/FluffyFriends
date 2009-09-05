@@ -16,10 +16,11 @@ var Cloud = Class.create( Sprite, {
     var self = this;
     
     setInterval( function(){ 
-      if( self.node.offsetLeft >  self.distance + self.node.offsetWidth ) 
+      if( parseInt( self.node.style.left ) >  self.distance ) 
       {
-        self.node.style.left = -self.node.offsetWidth + 'px';
-        return;
+        console.log( self.id + ' is out, reset position' + -self.node.offsetWidth  );
+        self.node.style.left = Math.round( -self.node.offsetWidth ) + 'px';
+        //return;
       }
       self.node.style.left = ( self.node.offsetLeft + self.speed ) + 'px';
       //console.log( self.node.style.left );
