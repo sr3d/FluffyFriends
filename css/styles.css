@@ -14,6 +14,13 @@ body { font-family: arial; }
 
 #yukyuk
 { background: url('../images/yukyuk_ani.gif') no-repeat top left; width: 304px; height: 264px; position: absolute; bottom: 0px; right: 0px; } 
+  #score_bubble_wrapper
+  { position: relative; }
+    #score_bubble
+    { position: absolute; left: 210px; top: -74px; background: url('../images/score_bubble.png') no-repeat top left; width: 92px; height: 94px; }
+      #score
+      { font-size: 40px; width: 92px; text-align: center; color: #f4f4f4; margin-top: 20px; }
+  
   #mouth
   { background: url('../images/mouth_close.png') no-repeat top left; width: 112px; height: 95px; position: absolute; bottom: 40px; left: 70px; }
 
@@ -25,14 +32,16 @@ body { font-family: arial; }
 { border: 1px solid red; position: absolute;}
 
 
-#score
-{ font-size: 40px; position: absolute; right: 0px; top: 0px; }
+
 
 #volcano 
 { position: absolute; background: url('../images/volcano_new.gif') no-repeat top left; width: 149px; height: 105px; bottom: 0px; left: 20px; }
 
   #volcano.erupt
   { background: url('../images/volcano_new_ani.gif'); }
+  
+  #flies
+  { background: url('../images/flies.gif') no-repeat top left; position: absolute; bottom: 50px; left: 20px; width: 188px; height: 154px; }
 
 
 .cloud

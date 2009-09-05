@@ -5,7 +5,7 @@
 
 <script type="text/javascript" charset="utf-8">
 if( typeof console == 'undefined') { console = { log: function(msg) { ; } } };
-DEBUG_COLLISION = true;
+DEBUG_COLLISION = !true;
 </script>
 <!--
 <script type="text/javascript" charset="utf-8" src='http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js'></script>-->
@@ -62,13 +62,19 @@ var game;
 	    <div id="cloud5" class='cloud'></div>
 	  </div>
 	  
-		<div id='score'>0</div>
+
 		
-    <div id="yukyuk"><div id='mouth'></div></div>
+    <div id="yukyuk">
+      <div id='score_bubble_wrapper'>
+        <div id='score_bubble'><div id='score'>0</div></div>
+      </div>
+      <div id='mouth'></div>
+    </div>
     <div id='bubbles'></div>    
     <div id="wave_mid"></div>
 
     <div id='volcano'></div>
+    <div id='flies'></div>
     <div id="wave_front"></div>
     
   </div>
