@@ -7,6 +7,9 @@ body { font-family: arial; text-align: center; }
   background: url('../images/game_bg.png') no-repeat top left; 
 }
 
+#tagline
+{ background: url('../images/make_yukyuk_happy.gif') no-repeat top left; width: 312px; height: 73px; position: absolute; left: 30px; top: 30px; }
+
 #wave_front
 { background: url('../images/wave_front.gif') no-repeat top left; bottom: 0px; width: 100%; height: 35px; position: absolute; z-index: 99; }
 #wave_mid

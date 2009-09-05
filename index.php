@@ -57,6 +57,7 @@ var game;
   	  <div id="clouds">
   	    <div id="cloud1" class='cloud'></div>
   	    <div id="cloud2" class='cloud'></div>
+  	    <div id="tagline"></div>
   	    <div id="cloud3" class='cloud'></div>
   	    <div id="cloud4" class='cloud'></div>
   	    <div id="cloud5" class='cloud'></div>
