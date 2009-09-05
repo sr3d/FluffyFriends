@@ -16,7 +16,7 @@ var Volcano = Class.create( Sprite, {
     
     this.critterTypes = [ Critter, HamCritter, ChainsawCritter,  IcecreamCritter ];
     
-    this.maxCritters = 6;
+    this.maxCritters = 2;
   }
   
   ,tick : function() {

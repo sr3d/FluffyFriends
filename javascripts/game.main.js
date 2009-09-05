@@ -20,6 +20,7 @@ Event.observe( window, 'load', function() {
   new Wave( 'wave_front' , {} );  
   new Wave( 'wave_mid' , {
     speed: 1
+    ,tickSpeed: 33
   } );  
 
 } );

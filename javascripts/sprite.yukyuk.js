@@ -16,7 +16,7 @@ YukYuk.prototype = Object.extend(new Sprite(), {
 		this.bb = new BoundingShape.Rectangle( this.id, { 
 			x: this.x
 			,y: this.y
-			,w: 120 
+			,w: 100 
 			,h: 50	
 		} );
 		this.bb.isEnabled = false;
@@ -27,13 +27,13 @@ YukYuk.prototype = Object.extend(new Sprite(), {
   }
   
 	,updateBoundingBox: function() {
-		this.bb.setPos( this.getX() + 90, this.getY() + 220 );	
+		this.bb.setPos( this.getX() + 70, this.getY() + 150 );	
 	}
 
   ,tick: function() {
     if( this.velocity == 0 ) 
     { 
-      sl.log( 'status', '' )
+      // sl.log( 'status', '' )
       return;
     }
     

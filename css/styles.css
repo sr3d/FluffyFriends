@@ -10,11 +10,13 @@ body { font-family: arial; }
 { background: url('../images/wave_mid.png') no-repeat top left; bottom: 0px; width: 100%; height: 42px; position: absolute; }
 
 #yukyuk
-{ background: url('../images/yukyuk.png') no-repeat top left; width: 304px; height: 264px; position: absolute;
-  bottom: 0px; right: 0px;
-}
-.open
-{ background: url('../images/yukyuk.png') no-repeat top left !important; }
+{ background: url('../images/yukyuk_ani.gif') no-repeat top left; width: 304px; height: 264px; position: absolute; bottom: 0px; right: 0px; } 
+  #mouth
+  { background: url('../images/mouth_close.png') no-repeat top left; width: 112px; height: 95px; position: absolute; bottom: 40px; left: 70px; }
+
+  #yukyuk.open #mouth
+  { background: url('../images/mouth_open.png') no-repeat top left !important; }
+
 
 .soot
 { position: absolute; background: url('../images/soot.png') no-repeat top left; width: 19px; height: 17px; }
@@ -27,7 +29,7 @@ body { font-family: arial; }
 { position: absolute; background: url('../images/volcano.png') no-repeat top left; width: 149px; height: 105px; bottom: 0px; left: 20px; }
 
   #volcano.erupt
-  { background: url('../images/volcano_faster.gif'); }
+  { background: url('../images/volcano_new.gif'); }
 
 .critter
 { position: absolute; background: transparent url('../images/ani_critter_2.gif') no-repeat top left; width: 29px; height: 29px; }
@@ -39,3 +41,5 @@ body { font-family: arial; }
   
   .chainsaw
   { background: transparent url('../images/ani_chainsaw.gif') !important; width: 37px; height: 38px }
+  
+  
