@@ -16,6 +16,8 @@ DEBUG_COLLISION = !true;
 <script type="text/javascript" charset="utf-8" src='javascripts/sprite.critter.js'></script>
 <script type="text/javascript" charset="utf-8" src='javascripts/sprite.yukyuk.js'></script>
 
+<script type="text/javascript" charset="utf-8" src='javascripts/sprite.wave.js'></script>
+
 <script type="text/javascript" charset="utf-8" src='javascripts/physics.collision.js'></script>
 
 <script type="text/javascript" charset="utf-8" src='javascripts/game.console.js'></script>
@@ -36,6 +38,8 @@ var game;
   img.src = item;
 } );
 
+
+
 </script>
 
 <link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
@@ -50,8 +54,14 @@ var game;
   
 	<div id="canvas">
 		<div id='score'>0</div>
+		
     <div id="yukyuk"></div>
+    <div id="wave_mid"></div>
+
     <div id='volcano'></div>
+    
+    <div id="wave_front"></div>
+    
   </div>
   
   <div style='margin: 0 auto; width: 700px;font-size: 24px; color: #DFDFDF; font-weight: bold; text-align: right;padding-right: 20px; '>

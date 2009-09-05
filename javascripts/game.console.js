@@ -1,7 +1,7 @@
 var Console = Class.create( { 
   initialize : function ( screen, options ) {
     options = Object.extend( { 
-      frameRate:   30
+      tickSpeed:   25
     } , options || { } );
     
     this.tickSpeed  = options.tickSpeed;
@@ -13,7 +13,7 @@ var Console = Class.create( {
   
   ,start: function() {
     var self = this;
-    this.interval = window.setInterval( function () { self.tick() }, 25 );
+    this.interval = window.setInterval( function () { self.tick() }, this.tickSpeed );
     document.onkeydown  = function (e) { self.keyDown(e); return !false; };
     document.onkeyup    = function (e) { self.keyUp(e); return !false; };
     document.onkeypress = function (e) { self.keyPress(e); return !false; };

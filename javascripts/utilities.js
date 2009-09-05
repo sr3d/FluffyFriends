@@ -31,4 +31,6 @@ Util.StaticLogger = {
 }
 var sl = Util.StaticLogger;
 
+sl.log = Prototype.emptyFunction;
+
 Event.KEY_SPACE = 32;

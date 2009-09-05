@@ -1,7 +1,7 @@
 var Volcano = Class.create( Sprite, { 
-  initialize: function( $super, options ) { 
+  initialize: function( $super, id, options ) { 
     options = Object.extend( { 
-      speed:      5
+      speed:      2
       ,friction:  0.5
       ,width:     50
       ,height:    50

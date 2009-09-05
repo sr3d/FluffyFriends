@@ -35,6 +35,7 @@ var GameScreen = Class.create( Screen, {
 	}
 
 	,keyDown : function (e) {
+    var self = this;
     switch (e.keyCode) {
       case Event.KEY_LEFT:
         this.character.velocity = -this.character.speed;
@@ -46,6 +47,7 @@ var GameScreen = Class.create( Screen, {
         break;
       case Event.KEY_SPACE:  // space
         this.character.chomping();
+        setTimeout( function(){ self.character.noChomping(); }, 120 );
         break;
       default:
         sl.log('Key Pressed', e.keyCode);
@@ -54,6 +56,7 @@ var GameScreen = Class.create( Screen, {
   }
 
   ,keyUp : function(e) {
+    var self = this;
     switch (e.keyCode) {
       case Event.KEY_LEFT:
         if (this.character.velocity < 0) this.character.velocity = 0;
@@ -64,8 +67,7 @@ var GameScreen = Class.create( Screen, {
         sl.log( 'velocity', this.character.velocity );  
         break;
       case Event.KEY_SPACE:
-        var self = this;
-        setTimeout( function(){ self.character.noChomping(); }, 100 );
+        //setTimeout( function(){ self.character.noChomping(); }, 100 );
         break;
     }
   }

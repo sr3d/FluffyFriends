@@ -9,8 +9,8 @@ YukYuk.prototype = Object.extend(new Sprite(), {
     this.friction   = 0;
     this.velocity   = 0;
     
-    this.leftBound  = 80;
-    this.rightBound = 30;
+    this.leftBound  = 0; // 80;
+    this.rightBound = 0; // 30;
 
 
 		this.bb = new BoundingShape.Rectangle( this.id, { 
