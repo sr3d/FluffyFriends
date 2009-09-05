@@ -9,7 +9,7 @@ YukYuk.prototype = Object.extend(new Sprite(), {
     this.friction   = 0;
     this.velocity   = 0;
     
-    this.leftBound  = 0; // 80;
+    this.leftBound  = 90; // 80;
     this.rightBound = 0; // 30;
 
 

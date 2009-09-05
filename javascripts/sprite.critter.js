@@ -64,7 +64,7 @@ var Critter = Class.create( Sprite, {
     //this.currentTick    = 0;  // the time
 
     this.angle          = 0.8 + Math.random() * 0.4;
-    this.b              = 300;      // offset for y-axis, where the critter appears
+    this.b              = 230;      // offset for y-axis, where the critter appears
     this.currentTick    = 0;        // the time
 
     /* find the speed and acceleration*/

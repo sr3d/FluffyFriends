@@ -17,6 +17,7 @@ DEBUG_COLLISION = true;
 <script type="text/javascript" charset="utf-8" src='javascripts/sprite.yukyuk.js'></script>
 
 <script type="text/javascript" charset="utf-8" src='javascripts/sprite.wave.js'></script>
+<script type="text/javascript" charset="utf-8" src='javascripts/sprite.cloud.js'></script>
 
 <script type="text/javascript" charset="utf-8" src='javascripts/physics.collision.js'></script>
 
@@ -53,13 +54,21 @@ var game;
   </div>  
   
 	<div id="canvas">
+	  <div id="clouds">
+	    <div id="cloud1" class='cloud'></div>
+	    <div id="cloud2" class='cloud'></div>
+	    <div id="cloud3" class='cloud'></div>
+	    <div id="cloud4" class='cloud'></div>
+	    <div id="cloud5" class='cloud'></div>
+	  </div>
+	  
 		<div id='score'>0</div>
 		
     <div id="yukyuk"><div id='mouth'></div></div>
+    <div id='bubbles'></div>    
     <div id="wave_mid"></div>
 
     <div id='volcano'></div>
-    
     <div id="wave_front"></div>
     
   </div>
