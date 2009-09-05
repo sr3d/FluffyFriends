@@ -52,32 +52,33 @@ var game;
   <div style='margin: 0 auto; width: 700px;font-size: 48px;; font-weight: bold; text-align: right;padding-right: 20px; '>
     YukYuk
   </div>  
-  
-	<div id="canvas">
-	  <div id="clouds">
-	    <div id="cloud1" class='cloud'></div>
-	    <div id="cloud2" class='cloud'></div>
-	    <div id="cloud3" class='cloud'></div>
-	    <div id="cloud4" class='cloud'></div>
-	    <div id="cloud5" class='cloud'></div>
-	  </div>
-	  
-
-		
-    <div id="yukyuk">
-      <div id='score_bubble_wrapper'>
-        <div id='score_bubble'><div id='score'>0</div></div>
+  <div id='canvas_wrapper'>
+  	<div id="canvas">
+  	  <div id="clouds">
+  	    <div id="cloud1" class='cloud'></div>
+  	    <div id="cloud2" class='cloud'></div>
+  	    <div id="cloud3" class='cloud'></div>
+  	    <div id="cloud4" class='cloud'></div>
+  	    <div id="cloud5" class='cloud'></div>
+  	  </div>
+  	  
+      <div id="yukyuk">
+        <div id='score_bubble_wrapper'>
+          <div id='score_bubble'><div id='score'>0</div></div>
+        </div>
+        <div id='mouth'></div>
       </div>
-      <div id='mouth'></div>
-    </div>
-    <div id='bubbles'></div>    
-    <div id="wave_mid"></div>
 
-    <div id='volcano'></div>
-    <div id='flies'></div>
-    <div id="wave_front"></div>
-    
+      <div id='bubbles'></div>
+      <div id="wave_mid"></div>
+  
+      <div id='volcano'></div>
+      <div id='flies'></div>
+      <div id="wave_front"></div>
+      
+    </div><!-- #canvas -->
   </div>
+
   
   <div style='margin: 0 auto; width: 700px;font-size: 24px; color: #DFDFDF; font-weight: bold; text-align: right;padding-right: 20px; '>
 		left | right | space

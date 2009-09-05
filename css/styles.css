@@ -1,7 +1,10 @@
-body { font-family: arial; }
+body { font-family: arial; text-align: center; }
+#canvas_wrapper
+{ width: 810px; height: 356px; margin: 0 auto; overflow: hidden; }
 #canvas
-{ width: 810px; height: 356px; position: relative; margin: 0 auto; 
-  background: url('../images/game_bg.png') no-repeat top left; overflow: hidden;
+{ 
+  width: 810px; height: 360px; position: relative;
+  background: url('../images/game_bg.png') no-repeat top left; 
 }
 
 #wave_front
@@ -19,7 +22,7 @@ body { font-family: arial; }
     #score_bubble
     { position: absolute; left: 210px; top: -74px; background: url('../images/score_bubble.png') no-repeat top left; width: 92px; height: 94px; }
       #score
-      { font-size: 40px; width: 92px; text-align: center; color: #f4f4f4; margin-top: 20px; }
+      { font-size: 40px; width: 100px; text-align: center; color: #f4f4f4; margin-top: 20px; }
   
   #mouth
   { background: url('../images/mouth_close.png') no-repeat top left; width: 112px; height: 95px; position: absolute; bottom: 40px; left: 70px; }

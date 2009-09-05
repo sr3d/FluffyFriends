@@ -15,7 +15,7 @@ var Critter = Class.create( Sprite, {
     }, options || {} );
     
     this.id       = 'critter_' + Util.nextCounter();
-    console.log( this.id );
+
     this.type     = 'critter'
     this.speed    = options.speed;
     this.friction = options.friction;
