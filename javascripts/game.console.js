@@ -14,9 +14,12 @@ var Console = Class.create( {
   ,start: function() {
     var self = this;
     this.interval = window.setInterval( function () { self.tick() }, this.tickSpeed );
-    document.onkeydown  = function (e) { self.keyDown(e); return !false; };
-    document.onkeyup    = function (e) { self.keyUp(e); return !false; };
-    document.onkeypress = function (e) { self.keyPress(e); return !false; };
+    Event.observe( document, 'keydown', function( e ) {  self.keyDown(e); return !false; } );    
+    Event.observe( document, 'keyup', function( e ) {  self.keyUp(e); return !false; } );    
+    Event.observe( document, 'keypress', function( e ) {  self.keyPress(e); return !false; } );    
+
+    //document.onkeyup    = function (e) { self.keyUp(e); return !false; };
+    //document.onkeypress = function (e) { self.keyPress(e); return !false; };
     
     return this;
   }

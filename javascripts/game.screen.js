@@ -36,7 +36,8 @@ var GameScreen = Class.create( Screen, {
 
 	,keyDown : function (e) {
     var self = this;
-    switch (e.keyCode) {
+    var key = e.keyCode || windows.event.which;
+    switch( key ) {
       case Event.KEY_LEFT:
         this.character.velocity = -this.character.speed;
         sl.log( 'velocity', this.character.velocity );
@@ -57,7 +58,8 @@ var GameScreen = Class.create( Screen, {
 
   ,keyUp : function(e) {
     var self = this;
-    switch (e.keyCode) {
+    var key = e.keyCode || e.which;
+    switch( key ) {
       case Event.KEY_LEFT:
         if (this.character.velocity < 0) this.character.velocity = 0;
         sl.log( 'velocity', this.character.velocity );

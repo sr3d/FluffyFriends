@@ -1,6 +1,6 @@
-body { font-family: arial; text-align: center; }
+body { font-family: arial; _text-align: center; }
 #canvas_wrapper
-{ width: 810px; height: 356px; margin: 0 auto; overflow: hidden; }
+{ width: 810px; height: 356px; margin-left: auto; margin-right: auto; padding: 0 auto; overflow: hidden; text-align: left; }
 #canvas
 { 
   width: 810px; height: 360px; position: relative;
@@ -30,7 +30,7 @@ body { font-family: arial; text-align: center; }
 #yukyuk
 { background: url('../images/yukyuk_ani.gif') no-repeat top left; width: 304px; height: 264px; position: absolute; bottom: 0px; right: 0px; } 
   #score_bubble_wrapper
-  { position: relative; }
+  { /*position: relative;*/ }
     #score_bubble
     { position: absolute; left: 210px; top: -74px; background: url('../images/score_bubble.png') no-repeat top left; width: 92px; height: 94px; }
       #score
